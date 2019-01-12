@@ -1,0 +1,286 @@
+class example:
+    print("hi this is my first class example")
+hi this is my first class example
+
+class example:
+    print("hi this is my first class example")
+    example.name="shashank"
+    example.age=32
+    example.salary="0.003"
+    print(example.name)
+    def basic_function(a):
+        print("this is the very basic function")
+example.name="sushank"
+print(example.name)
+    
+hi this is my first class example
+shashank
+sushank
+
+class example:
+    print("hi this is my first class example")
+    example.name="shashank"
+    example.age=32
+    example.salary="0.003"
+    print(example.name)
+    print(example.age)
+    print(example.salary)
+    def basic_function(a):
+        print("this is the very basic function")
+example.name="sushank"
+print(example.name)
+hi this is my first class example
+shashank
+32
+0.003
+sushank
+
+class example:
+    print("hi this is my first class example")
+    name="shashank"
+    age=32
+    salary=0.003
+    print(example.name)
+    print(example.age)
+    print(example.salary)
+    def basic_function(a):
+        print("this is the very basic function")
+exm=example()
+print(exm.name)
+hi this is my first class example
+shashank
+32
+0.003
+shashank
+
+class example:
+    print("hi this is my first class example")
+    name="shashank"
+    age=32
+    salary=0.003
+    def basic_function(a):
+        print("this is the very basic function")
+example.basic_function(10)
+​
+hi this is my first class example
+this is the very basic function
+
+class example:
+    print("hi this is my first class example")
+    name="shashank"
+    age=32
+    salary=0.003
+    def basic_function(a):
+        print("this is the very basic function")
+        print(a.age)
+emp1=example()
+example.basic_function(emp1)
+hi this is my first class example
+this is the very basic function
+32
+
+class example:
+    print("hi this is my first class example")
+    name="shashank"
+    age=32
+    salary=0.003
+    def basic_function(a):
+        print("this is the very basic function")
+        print(a.age)
+emp1=example()
+emp1.basic_function()
+hi this is my first class example
+this is the very basic function
+32
+
+class example:
+    print("hi this is my first class example")
+    name="shashank"
+    age=32
+    salary=0.003
+    def basic_function(a):
+        print("this is the very basic function")
+        print(a.age)
+        print(a.car)
+emp1=example()
+emp1.car="i10"
+emp1.basic_function()
+print(example.car)
+hi this is my first class example
+this is the very basic function
+32
+i10
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-18-891e3840917a> in <module>()
+     11 emp1.car="i10"
+     12 emp1.basic_function()
+---> 13 print(example.car)
+
+AttributeError: type object 'example' has no attribute 'car'
+
+
+class example:
+    print("hi this is my first class example")
+    name="shashank"
+    age=32
+    salary=0.003
+    def basic_function(self,b,c):
+        print("this is the very basic function")
+        print(self.age)
+        print(self.car)
+        print(b,c)
+emp1=example()
+emp1.car="i10"
+emp1.basic_function(35,45)
+example.basic_function(emp1,55,45)
+hi this is my first class example
+this is the very basic function
+32
+i10
+35 45
+this is the very basic function
+32
+i10
+55 45
+
+class example3:
+    def __init__(self,a,b,c):
+        self.name=a
+        self.age=b
+        self.school=c
+    def kruthi_func(self):
+       print(self.name,self.age,self.school)
+    def kousthub_func(self):
+        self.name="kousthub"
+        print(self.name,self.age,self.school)
+kruthi_obj1=example3("kruthi",3.5,"lmp")
+kruthi_obj1.kruthi_func()
+kruthi_obj1.kousthub_func()
+​
+    
+        
+kruthi 3.5 lmp
+kousthub 3.5 lmp
+
+class encapsulation_example:
+    print("this is class")
+    def __init__(self,name,age,salary,bank):
+        self.n=name
+        self.a=age
+        self.sal=salary
+        self.b=bank
+    def basic_data(self):
+        return e1.n,e1.a,e1.sal,e1.b
+    def secure_data(self):
+        e1.sal=2223
+        e1.b=3334
+        return e1.sal,e1.b
+e1=encapsulation_example("shashank",32,2222,3333)
+print(e1.basic_data())
+print(e1.secure_data())
+this is class
+('shashank', 32, 2222, 3333)
+(2223, 3334)
+
+class encapsulation_example:
+    print("this is class")
+    def __init__(self,name,age,salary,bank):
+        self.n=name
+        self.a=age
+        self.__sal=salary
+        self.__b=bank
+    def basic_data(self):
+        return e1.n,e1.a,e1.__sal,e1.__b
+    def secure_data(self):
+        e1.sal=2223
+        e1.b=3334
+        return e1.__sal,e1.__b
+e1=encapsulation_example("shashank",32,2222,3333)
+print(e1.basic_data())
+print(e1.secure_data())
+this is class
+('shashank', 32, 2222, 3333)
+(2222, 3333)
+
+def yield_example():
+    s="shashank"
+    print(s)
+    yield 33
+    yield 1
+    yield 2
+    yield 3
+    
+a=yield_example()
+print(a)
+for i in a:
+    print(i)
+<generator object yield_example at 0x00000213B964B390>
+shashank
+33
+1
+2
+3
+
+def xSquared(x):
+    return x**2
+​
+def getDeriv(func, x):
+  """Compute the derivative of `func` at the location `x`."""
+  h = 0.0001 #step size
+  return (func(x+h) - func(x)) / h
+​
+x = 3 # the location of interest
+derivative = getDeriv(xSquared, x)
+actual = 2*x
+​
+print("The derivative is: ")
+print(derivative)
+print("\nThe actual is: ")
+print(actual)
+The derivative is: 
+6.000100000012054
+
+The actual is: 
+6
+
+class class1:
+    def fun1():
+        print("this is is fun1")
+    def fun2():
+        print("this is is fun2")
+        class1.fun1()
+​
+    
+    
+
+#inhertiance example
+class class2:
+    def parent(self):
+        print("this is parent class")
+class class3(class2):
+    def child():
+        print("this is child class")
+obj=class3()
+obj.parent()
+this is parent class
+
+class class2:
+    def __init__(self,age,sal):
+        self.a=age
+        self.b=sal
+    def parent(self):
+        print("this is parent class")
+class class3(class2):
+    #print(self.a,self.b)
+    def child(self):
+        print(self.a,self.b)
+        print("this is child class")
+obj=class3(20,30)
+obj.parent()
+obj.child()
+​
+​
+this is parent class
+20 30
+this is child class
