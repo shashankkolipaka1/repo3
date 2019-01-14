@@ -1,0 +1,356 @@
+
+
+def function_example(a,b,c=13,d=14):
+    res=a+b+c+d
+    return res
+res=function_example(10,20)
+print(res)
+57
+
+def function_example(a,b,c=13,d=14):
+    res=a+b+c+d
+    return res
+res=function_example(10,20,55,65)
+print(res)
+150
+
+def function_example(a,b,c=13,d=14,*k):
+    for i in k:
+        print(i)
+        res=a+b+c+d+i
+    return res
+res=function_example(10,20,55,65,44,33,22)
+print(res)
+44
+33
+22
+172
+
+def function_example(a,b,c=13,d=14,**kw):
+    for i,j in kw:
+        print(i)
+        res=a+b+c+d+i
+    return res
+res=function_example(10,20,55,65,e=44,f=33)
+print(res)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-48-8c54632e946f> in <module>()
+      4         res=a+b+c+d+i
+      5     return res
+----> 6 res=function_example(10,20,55,65,e=44,f=33)
+      7 print(res)
+
+<ipython-input-48-8c54632e946f> in function_example(a, b, c, d, **kw)
+      1 def function_example(a,b,c=13,d=14,**kw):
+----> 2     for i,j in kw:
+      3         print(i,j)
+      4         res=a+b+c+d+i
+      5     return res
+
+ValueError: not enough values to unpack (expected 2, got 1)
+
+
+d={'name':"shashank",'age':32,'salary':7777.7}
+#d['name']
+#d.get('name')
+#for key,value in d.items():
+    #print(key,value)
+#for i in d.keys():
+    #print(i)
+#for i in d.values():
+    #print(i)
+d.update({'name':"kolipaka"})
+d.pop('name')
+d.setdefault('name',"shashank")
+#print(d)
+l=[1,2,3,4,5]
+l1=[6,7,8,9,10]
+print(zip(l,l1))
+for i in zip(l,l1):
+    print(i)
+#d1={for key,value in zip(l,l1)}:
+    #print(d1)
+    
+​
+​
+​
+<zip object at 0x000001D6692F2F48>
+(1, 6)
+(2, 7)
+(3, 8)
+(4, 9)
+(5, 10)
+
+d={'name':"shashank",'age':32,'salary':7777.7}
+#d['name']
+#d.get('name')
+#for key,value in d.items():
+    #print(key,value)
+print(d.keys())
+for i in d.keys():
+    print(i)
+#for i in d.values():
+    #print(i)
+d.update({'name':"kolipaka"})
+d.pop('name')
+d.setdefault('name',"shashank")
+#print(d)
+l=[1,2,3,4,5]
+l1=[6,7,8,9,10]
+#print(zip(l,l1))
+#for i,j in zip(l,l1):
+    #print(i,j)
+d1={key:value for key,value in zip(l,l1)}
+print(d1)
+dict_keys(['name', 'age', 'salary'])
+name
+age
+salary
+{1: 6, 2: 7, 3: 8, 4: 9, 5: 10}
+
+l1=[9,6,7,2,8]
+l2=[2,7,9,4]
+#for i,j in l1:
+#print(i)
+for i in l1:
+    print(i)
+9
+6
+7
+2
+8
+
+data={'name':"kruthi",'age':3.5,'school':"lmph",'fee':9000}
+print(data['name'])
+print(data['age'])
+print(data['school'])
+print(data['fee'])
+data.get('name')
+​
+​
+kruthi
+3.5
+lmph
+9000
+'kruthi'
+
+for i in data:
+    print(i,data[i])
+name kruthi
+age 3.5
+school lmph
+fee 9000
+
+go=data.items()
+for i,j in go:
+    print (i,j)
+​
+name kruthi
+age 3.5
+school lmph
+fee 9000
+
+data.keys()
+​
+dict_keys(['name', 'age', 'school', 'fee'])
+
+data.update({'name':"baby kruthi"})
+print(data['name'])
+baby kruthi
+
+data.setdefault({'bag':"blue"})
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-38-798ff6739117> in <module>()
+----> 1 data.setdefault({'bag':"blue"})
+
+TypeError: unhashable type: 'dict'
+
+
+data.setdefault('fee','8000')
+data.items()
+​
+dict_items([('name', 'baby kruthi'), ('age', 3.5), ('school', 'lmph'), ('fee', '8000')])
+
+def function_example(a,b,c=20,d=30,*k,**kw):
+    res=a+b+c+d
+    for i in k:
+        print(i)
+        res=res+i
+    for i,j in kw.items():
+        res=res+j
+        #print(res)
+    return res
+res=function_example(10,20,45,55,65,75,45,35,f=100,g=90)
+print(res)
+65
+75
+45
+35
+540
+
+d={'name':"shashank",'age':31}
+for i in d:
+    print (i)
+name
+age
+
+i="name"
+i,j="shashank"
+​
+
+f=open("file1.txt","w")
+f.write("shashank is still learning python")
+f.close()
+​
+
+f.write("shashank needs to learn python quickly")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-5-e6c1975f0e48> in <module>()
+----> 1 f.write("shashank needs to learn python quickly")
+
+ValueError: I/O operation on closed file.
+
+
+f=open("file1.txt","w")
+f.write("shashank is still learning python\n")
+f.flush()
+f.write("shashank needs to learn python quickly")
+f.flush()
+
+f=open("file1.txt","a")
+f.write("\n appending , new data")
+f.close()
+
+f=open("file1.txt","w")
+f.write("\n appending , new data for second time")
+f.close()
+
+f=open("file1.txt","w")
+f.write("\n appending , new data for second time")
+f.flush()
+f.write("\n appending , new data for third time")
+f.flush()
+​
+​
+
+f=open("file2.txt","a")
+f.write("checking append mode")
+f.close()
+
+f=open("file1.txt","r")
+f.read()
+'\n appending , new data for second time\n appending , new data for third time'
+
+f=open("file1.txt","r")
+f.readline()
+'\n'
+
+#f=open("file1.txt","r")
+f.readline()
+' appending , new data for third time'
+
+f=open("file1.txt","r")
+f.readline()
+' shashank\n'
+
+f.readline()
+' appending , new data for second time\n'
+
+f.readlines()
+​
+[' appending , new data for third time']
+
+f=open("file1.txt","r")
+b=f.readlines()
+[' shashank\n',
+ ' appending , new data for second time\n',
+ ' appending , new data for third time']
+
+print(type(f))
+<class '_io.TextIOWrapper'>
+
+f=open("file1.txt","r")
+b=f.readlines()
+type(b)
+print(b)
+#"shashank" in b
+[' shashank\n', ' appending , new data for second time\n', ' appending , new data for third time']
+
+type(b)
+list
+
+ " shashank\n" in b
+True
+
+f=open("file1.txt","r")
+print(f.tell())
+f.read(5)
+print(f.tell())
+print(f.read())
+​
+0
+5
+hank
+ appending , new data for second time
+ appending , new data for third time
+
+f=open("file1.txt","r")
+print(f.read(5))
+​
+ shas
+
+print(f.read())
+hank
+ appending , new data for second time
+ appending , new data for third time
+
+f=open("file3.txt","w")
+f.write("hi i am fine and \n i am very good \n i am very nice")
+f.close()
+f1=open("file3.txt","r")
+print(f1.read(5))
+print(f1.tell())
+print(f1.read())
+print(f1.tell())
+f1.seek(5)
+print(f1.read())
+​
+​
+hi i 
+5
+am fine and 
+ i am very good 
+ i am very nice
+52
+am fine and 
+ i am very good 
+ i am very nice
+
+l=[1,2,34,54]
+f=open("file3.txt","wb")
+import pickle
+#pickle.load(f)
+pickle.dump(l,f)
+f.close()
+data=open("file3.txt","rb")
+f1=pickle.load(data)
+for i in f1:
+    print(i)
+type(i)
+​
+​
+1
+2
+34
+54
+int
+
+f=open("file2.txt","w")
+f.write("shashank is still learning python\n")
+f.flush()
+f.write("shashank needs to learn python quickly")
+f.flush()
+
