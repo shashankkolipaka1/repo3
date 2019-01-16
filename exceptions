@@ -1,0 +1,356 @@
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+print("the values of a and b before conversion are %s,%s"%(a,b))
+a=float(a)
+b=float(b)
+print("the values of a and b after conversion are %s,%s"%(a,b))
+    
+please enter the value of a
+12
+please enter the value of b
+13
+the values of a and b before conversion are 12,13
+the values of a and b after conversion are 12.0,13.0
+
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+a=float(a)
+b=float(b)
+try:
+    print("division started")
+    res=a/b
+    print("%s is the value of the res"%res)
+except Exception as err:
+    print(err)
+print("exceptions can be printed in except block using an object")
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+a=float(a)
+b=float(b)
+try:
+    print("division started")
+    res=a/b
+    print("%s is the value of the res"%res)
+except Exception as err:
+    print(err)
+print("exceptions can be printed in except block using an object")
+​
+please enter the value of a
+12
+please enter the value of b
+0
+division started
+float division by zero
+exceptions can be printed in except block using an object
+
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+a=float(a)
+b=float(b)
+try:
+    print("division started")
+    res=a/b
+    print("%s is the value of the res"%res)
+except Exception as err:
+    print(err)
+print("exceptions can be printed in except block using an object")
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+a=float(a)
+b=float(b)
+try:
+    print("division started")
+    res=a/b
+    print("%s is the value of the res"%res)
+except Exception as err:
+    print(err)
+print("exceptions can be printed in except block using an object")
+please enter the value of a
+12
+please enter the value of b
+weeee
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-5-484fa8dda6eb> in <module>()
+      4 b=input()
+      5 a=float(a)
+----> 6 b=float(b)
+      7 try:
+      8     print("division started")
+
+ValueError: could not convert string to float: 'weeee'
+
+
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+try:
+    print("division started")
+    a=float(a)
+    b=float(b)
+    res=a/b
+    print("%s is the value of the res"%res)
+except ValueError as err:
+    print("please enter digits")
+#print("exceptions can be printed in except block using an object")
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+try:
+    print("division started")
+    a=float(a)
+    b=float(b)
+    res=a/b
+    print("%s is the value of the res"%res)
+except ValueError as err:
+    print("please enter digits")
+#print("exceptions can be printed in except block using an object")
+please enter the value of a
+12
+please enter the value of b
+13
+division started
+0.9230769230769231 is the value of the res
+
+try:
+    print("division started")
+    a=float(a)
+    b=float(b)
+    res=a/b
+    print("%s is the value of the res"%res)
+except ValueError as err:
+    print("please enter digits")
+except ZeroDivisionError as err:
+    print("cant divide by zero")
+print("please enter the value of a")
+a=input()
+print("please enter the value of b")
+b=input()
+try:
+    print("division started")
+    a=float(a)
+    b=float(b)
+    res=a/b
+    print("%s is the value of the res"%res)
+except ValueError as err:
+    print("please enter digits")
+except ZeroDivisionError as err:
+    print("cant divide by zero")
+#print("exceptions can be printed in except block using an object")
+please enter the value of a
+12
+please enter the value of b
+0
+division started
+cant divide by zero
+
+def fun():
+    print("please enter the value of a")
+    a=input()
+    print("please enter the value of b")
+    b=input()
+    try:
+        print("division started")
+        a=float(a)
+        b=float(b)
+        res=a/b
+        print("%s is the value of the res"%res)
+    except ValueError as err:
+        print("please enter digits")
+    except ZeroDivisionError as err:
+        print("cant divide by zero")
+    finally:
+        print("this is finally block")
+    print("function main block")
+fun()
+def fun():
+    print("please enter the value of a")
+    a=input()
+    print("please enter the value of b")
+    b=input()
+    try:
+        print("division started")
+        a=float(a)
+        b=float(b)
+        res=a/b
+        print("%s is the value of the res"%res)
+    except ValueError as err:
+        print("please enter digits")
+    except ZeroDivisionError as err:
+        print("cant divide by zero")
+    finally:
+        print("this is finally block")
+    print("function main block")
+fun()
+please enter the value of a
+12
+please enter the value of b
+wee
+division started
+please enter digits
+this is finally block
+function main block
+
+def fun():
+    print("please enter the value of a")
+    a=input()
+    print("please enter the value of b")
+    b=input()
+    try:
+        print("division started")
+        a=float(a)
+        b=float(b)
+        res=a/b
+        print("%s is the value of the res"%res)
+    except ValueError as err:
+        print("please enter digits")
+    except ZeroDivisionError as err:
+        print("cant divide by zero")
+    finally:
+        print("this is finally block")
+    print("function main block")
+fun()
+please enter the value of a
+12
+please enter the value of b
+0
+division started
+cant divide by zero
+this is finally block
+function main block
+
+def fun():
+    print("function main block")
+    try:
+        print("this is try block")
+        return 22
+    except:
+        print("this is except block")
+    finally:
+        print("finally")
+    print("again function main block")
+res=fun()
+print("%s is the function return value"%res)
+def fun():
+    print("function main block")
+    try:
+        print("this is try block")
+        return 22
+    except:
+        print("this is except block")
+    finally:
+        print("finally")
+    print("again function main block")
+res=fun()
+print("%s is the function return value"%res)
+function main block
+this is try block
+finally
+22 is the function return value
+
+#finally block gets executed even after return is encountered in the try block
+#finally block gets executed even after return is encountered in the try block
+def fun():
+    print("function main block")
+    try:
+        print("this is try block")
+        return 22
+    except:
+        print("this is except block")
+    finally:
+        print("finally")
+        return 33
+    print("again function main block")
+res=fun()
+print("%s is the function return value"%res)
+function main block
+this is try block
+finally
+33 is the function return value
+
+#finally block gets executed even after return is encountered in the except block
+def fun():
+    print("function main block")
+    try:
+        print("this is try block")
+        res1=1/0
+        return 22
+    except:
+        print("this is except block")
+        return 33
+    finally:
+        print("finally")
+    print("again function main block")
+res=fun()
+print("%s is the function return value"%res)
+function main block
+this is try block
+this is except block
+finally
+33 is the function return value
+#return statement can by pass function main-blocks if it is present in try or except. but finally will still be executed in those cases also
+def fun():
+    print("function main block")
+    try:
+        print("this is try block")
+        res1=1/0
+        return 22
+    except:
+        print("this is except block")
+        return 22
+    finally:
+        print("finally")
+    print("again function main block")
+    return 33
+res=fun()
+print("%s is the function return value"%res)
+function main block
+this is try block
+this is except block
+finally
+22 is the function return value
+def fun():
+    print("function main block")
+    try:
+        print("this is try block")
+        res1=1/0
+        return 22
+    except:
+        print("this is except block")
+        #return 22
+    finally:
+        print("finally")
+    print("again function main block")
+    return 33
+res=fun()
+print("%s is the function return value"%res)
+try:
+    for i in range(1,5):
+        res=i/0
+except:
+    print("please dont divide by 0")
+finally:
+    print("always gets executed")
+please dont divide by 0
+always gets executed
+
+try:
+    for i in range(1,5):
+        break
+except:
+    print("please dont divide by 0")
+finally:
+    print("always gets executed")
+always gets executed
