@@ -1,0 +1,423 @@
+=""""shashank
+is eating
+junk food
+12345
+13234"""
+print(s)
+"shashank
+is eating
+junk food
+12345
+13234
+
+s=""""shashank
+is eating
+junk food
+12345
+13234"""
+print(s.splitlines())
+['"shashank', 'is eating', 'junk food', '12345', '13234']
+
+s=""""shashank,
+is eating,
+junk food,
+12345,
+13234"""
+print(s.splitlines())
+['"shashank,', 'is eating,', 'junk food,', '12345,', '13234']
+
+l=s.split(",")
+print(l)
+print(l[0])
+​
+['"shashank', '\nis eating', '\njunk food', '\n12345', '\n13234']
+"shashank
+
+​
+s="""
+id,name,email,phone
+1,saiLaxmi,sai123@gmail.com,9676622023
+2,Vedhanvesh,Vedhanvesh123@gmail.com,9676622024
+3,Jayaram,Jayaram3@gmail.com,9676622024
+"""
+print(s.splitlines())
+​
+['', 'id,name,email,phone', '1,saiLaxmi,sai123@gmail.com,9676622023', '2,Vedhanvesh,Vedhanvesh123@gmail.com,9676622024', '3,Jayaram,Jayaram3@gmail.com,9676622024']
+
+#this program first splits the string line by line and then splits the individual lines at comma separator
+s="""
+id,name,email,phone
+1,saiLaxmi,sai123@gmail.com,9676622023
+2,Vedhanvesh,Vedhanvesh123@gmail.com,9676622024
+3,Jayaram,Jayaram3@gmail.com,9676622024
+"""
+for i in s.splitlines():
+    l=i.split(",")
+    print(l[-1])
+    
+
+phone
+9676622023
+9676622024
+9676622024
+
+#use regular expression to find your pattern.
+#regular expression pattern matching starts with
+#"[pattern to be matched]",s
+import re
+s="""shashank 33 5333
+sunanda 26 4333
+kruthi 3 1333333
+appa 63 23333
+amma 55 1111"""
+re.findall("[abc]",s)
+​
+['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+
+import re
+s="""shashank 33 5333
+sunanda 26 4333
+Kruthi 3 1333333
+appa 63 23333
+amma 55 1111"""
+re.findall("[abcA-K]",s)
+['a', 'a', 'a', 'a', 'K', 'a', 'a', 'a', 'a']
+
+#"[pattern to be matched]",s 
+#each [] is a pattern to be matched.it is a separate match
+#here second [] is pattern to be
+#checked after the first one is done
+import re
+s="""shashank 33 5333
+sunanda 26 4333
+aKruthi 3 1333333
+appa 63 23333
+amma 55 1111"""
+re.findall("[abc][A-K]",s)
+['aK']
+
+#using re.I matches case insensitive
+import re
+s="""shashank 33 5333
+sunanda 26 4333
+aKruthi 3 1333333
+appa 63 23333
+amma 55 1111"""
+re.findall("[a-s]",s,re.I)
+['s',
+ 'h',
+ 'a',
+ 's',
+ 'h',
+ 'a',
+ 'n',
+ 'k',
+ 's',
+ 'n',
+ 'a',
+ 'n',
+ 'd',
+ 'a',
+ 'a',
+ 'K',
+ 'r',
+ 'h',
+ 'i',
+ 'a',
+ 'p',
+ 'p',
+ 'a',
+ 'a',
+ 'm',
+ 'm',
+ 'a']
+
+import re
+s="""shashankK 33 5333
+sunandaK 26 4333
+KKruthi 3 1333
+Kappa 63 2333
+ammaM 55 1111"""
+print(re.findall("[a-s]",s))
+['s', 'h', 'a', 's', 'h', 'a', 'n', 'k', 's', 'n', 'a', 'n', 'd', 'a', 'a', 'r', 'h', 'i', 'a', 'p', 'p', 'a', 'a', 'm', 'm', 'a']
+
+​
+import re
+s="""shashankK 33 5333
+sunandaK 26 4333
+KKruthi 3 1333333
+Kappa 63 23333
+ammaM 55 1111"""
+print(re.findall("[a-z][ ][0-9]",s,re.I))
+['K 3', 'K 2', 'i 3', 'a 6', 'M 5']
+
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047"""
+re.findall("[0-9]",s)
+['9',
+ '6',
+ '7',
+ '6',
+ '1',
+ '0',
+ '6',
+ '8',
+ '9',
+ '4',
+ '9',
+ '5',
+ '0',
+ '2',
+ '4',
+ '5',
+ '1',
+ '1',
+ '6',
+ '3',
+ '9',
+ '8',
+ '8',
+ '5',
+ '8',
+ '7',
+ '2',
+ '7',
+ '6',
+ '9',
+ '7',
+ '7',
+ '9',
+ '9',
+ '1',
+ '7',
+ '4',
+ '0',
+ '4',
+ '7']
+
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047"""
+re.findall("[0-9][0-9]",s)
+['96',
+ '76',
+ '10',
+ '68',
+ '94',
+ '95',
+ '02',
+ '45',
+ '11',
+ '63',
+ '98',
+ '85',
+ '87',
+ '27',
+ '69',
+ '77',
+ '99',
+ '17',
+ '40',
+ '47']
+
+#for multiple repitions of the pattern use {} bracket
+#we can mention the number of repitions of the required patterns in {}
+#please note that the list will definitely
+#contain the a 10 digit number as we have
+#mentioned to search a pattern of 10 digits
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047 1"""
+re.findall("[0-9]{10}",s)
+['9676106894', '9502451163', '9885872769', '7799174047']
+
+#we can also ask for a range of repetitions ex 3,ten
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047 123"""
+re.findall("[0-9]{3,10}",s)
+['9676106894', '9502451163', '9885872769', '7799174047', '123']
+
+#to search atleast one pattern we can give {1,} in findall
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047 123"""
+print(re.findall("[0-9]{1,}",s))
+​
+['9676106894', '9502451163', '9885872769', '7799174047', '123']
+
+#{1,} in findall can be replaced by[]+
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047 123"""
+print(re.findall("[0-9]+",s))
+['9676106894', '9502451163', '9885872769', '7799174047', '123']
+
+#to find out places where our pattern is not found we can use {0,}
+#all the places where our pattern is not present gets converted to empty
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047 123"""
+print(re.findall("[0-9]{0,}",s))
+['', '', '', '', '', '', '', '', '', '9676106894', '', '', '', '', '', '', '', '', '', '9502451163', '', '', '', '', '', '', '9885872769', '', '', '', '', '', '', '7799174047', '', '123', '']
+
+#to find out places where our pattern is not found we can use {0,}
+#all the places where our pattern is not present gets converted to empty
+#insted of using {0,} we can use "[]*"
+import re
+s="""shashank 9676106894
+sunanda 9502451163
+appa 9885872769
+amma 7799174047 123"""
+print(re.findall("[0-9]*",s))
+['', '', '', '', '', '', '', '', '', '9676106894', '', '', '', '', '', '', '', '', '', '9502451163', '', '', '', '', '', '', '9885872769', '', '', '', '', '', '', '7799174047', '', '123', '']
+
+import re
+s="""shashank is;
+shashank;from shashank;
+to shashank;by shashank;"""
+obj=re.search("i",s)
+print(obj.span())
+​
+​
+​
+​
+​
+​
+​
+​
+​
+(9, 10)
+
+s="""
+hi how are you?
+i am fine, how about you?
+how is your health?have you seen a doc?
+please come to my home tomorrow
+address 1233455
+phone 1233455
+"""
+c=0
+for i,j in enumerate(s):
+    if(j=='?'):
+        c+=1
+print("%s char is found %d times"%(j,c))
+        
+
+ char is found 4 times
+
+# ^ symbol is used to check whether the pattern is present as the first character or not
+import re
+s="""shashank shashank221@gmail.com
+sunanda sunanda1112@gmail.com
+kolipakaramarao@gmail.com
+hiii how are you?"""
+print(re.findall("^[a-z]",s))
+['s']
+
+import re
+s="""shashank shashank221@gmail.com
+sunanda sunanda1112@gmail.com
+kolipakaramarao@gmail.com
+hiii how are you?"""
+print(re.findall("^[0-9]",s))
+[]
+
+# $ symbol is used to check whether the pattern is present as the last character or not
+import re
+s="""shashank shashank221@gmail.com
+sunanda sunanda1112@gmail.com
+kolipakaramarao@gmail.com
+hiii how are you"""
+print(re.findall("[a-z]$",s))
+['u']
+
+emails="""
+shashank221@yahoo.com
+dcsv
+shashank221@gmail.com
+dgjdg
+shashank221@yahoo.co.in
+kolipkaramarao@yahoo.com
+"""
+import re
+print(re.findall("[a-z0-9]+@[a-z]+.[a-z.a-z]+",emails))
+['shashank221@yahoo.com', 'shashank221@gmail.com', 'shashank221@yahoo.co.in', 'kolipkaramarao@yahoo.com']
+
+email="shashank221@gmail.com"
+re.findall("[a-z0-9@\.a-z]+",email)
+['shashank221@gmail.com']
+
+scores="""
+mahesh=23,
+shashank=34,
+munna=33
+rahul=22
+sreekar=44
+"""
+import re
+#print(re.findall("[a-z]+[^=][0-9]+",scores))
+print(re.findall("[^=]+[a-z0-9]+",scores))
+​
+​
+['\nmahesh', '23,\nshashank', '34,\nmunna', '33\nrahul', '22\nsreekar', '44']
+
+​
+scores="""
+mahesh=23,
+shashank=34,
+munna=33
+rahul=22
+sreekar=44
+"""
+import re
+#print(re.findall("[a-z]+[0-9]+",scores))
+l=re.findall("[a-z0-9]+",scores)
+index=0
+for i in l:
+    while(index<len(l)):
+        print(l[index]+' '+l[index+1])
+        index+=2
+    
+    
+    
+    
+    
+mahesh 23
+shashank 34
+munna 33
+rahul 22
+sreekar 44
+
+l=["shashank",'1',"hiii",'2',"bye",'3']
+index=0
+for i in l:
+    print(l[index]+l[index+1])
+    index+=2
+shashank1
+hiii2
+bye3
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-63-3a37b0c922b0> in <module>()
+      2 index=0
+      3 for i in l:
+----> 4     print(l[index]+l[index+1])
+      5     index+=2
+
+IndexError: list index out of range
