@@ -1,0 +1,257 @@
+
+#setdefault can be used to create a new key-value pair
+s="abcd efgh ijkl mnop qrst vuwx yz"
+d={}
+j=1
+for i in s.split():
+    d[i]=j
+    j=j+1
+d.setdefault("new",2)
+d['new']
+#setdefault can be used to create a new key-value pair
+s="abcd efgh ijkl mnop qrst vuwx yz"
+d={}
+j=1
+for i in s.split():
+    d[i]=j
+    j=j+1
+d.setdefault("new",2)
+d['new']
+2
+
+#we can iterate through the dic and print the values using <dic_name>[key]
+i=[1,2,3,4]
+d={1:"shashank",2:"kolipaka",4:"job"}
+for key in i:
+    if key in d:
+        print(d[key])
+        print(type(d[key]))
+shashank
+<class 'str'>
+kolipaka
+<class 'str'>
+job
+<class 'str'>
+
+# we can find the number of repetitons of a word in a string using the below pro
+# we can find the number of repetitons of a word in a string using the below pro
+s="""
+### !!! @@@ shashank learn python
+python learn shashank 
+learn python shashanl
+@@@ ##"""
+d={}
+for word in s.split():
+    if word not in d:
+        d[word]=1
+    else:
+        d[word]+=1
+print(d)
+    
+    
+{'###': 1, '!!!': 1, '@@@': 2, 'shashank': 2, 'learn': 3, 'python': 3, 'shashanl': 1, '##': 1}
+
+# we can find the number of repetitons of a word in a string using the below program
+#setdefault will create a new key and sets the value for that key if it is not present in the dic
+#once it sets the value for one time, it wont do it for second time
+s="""
+### !!! @@@ shashank learn python
+python learn shashank 
+learn python shashanl
+@@@ ##"""
+d={}
+for word in s.split():
+    d.setdefault(word,0)
+    d[word]+=1
+print(d)
+    
+{'###': 1, '!!!': 1, '@@@': 2, 'shashank': 2, 'learn': 3, 'python': 3, 'shashanl': 1, '##': 1}
+
+from collections import defaultdict
+d4=defaultdict(int)
+l=[1,2,34]
+for key in l :
+    d4[key]=1
+print(d4)
+defaultdict(<class 'int'>, {})
+defaultdict(<class 'int'>, {1: 1, 2: 1, 34: 1})
+
+d1={'###': 1, '!!!': 1, '@@@': 2, 'shashank': 2, 'learn': 3, 'python': 3, 'shashanl': 1, '##': 1}
+for keys in d1.keys():
+    print(keys)
+    
+###
+!!!
+@@@
+shashank
+learn
+python
+shashanl
+##
+
+d1={'###': 1, '!!!': 1, '@@@': 2, 'shashank': 2, 'learn': 3, 'python': 3, 'shashanl': 1, '##': 1}
+r=d1.keys()
+print((type(r)))
+print(d1.keys())
+   
+    
+<class 'dict_keys'>
+dict_keys(['###', '!!!', '@@@', 'shashank', 'learn', 'python', 'shashanl', '##'])
+
+d1={'###': 1, '!!!': 1, '@@@': 2, 'shashank': 2, 'learn': 3, 'python': 3, 'shashanl': 1, '##': 1}
+items=d1.items()
+print(type(items))
+print(d1.items())
+​
+<class 'dict_items'>
+dict_items([('###', 1), ('!!!', 1), ('@@@', 2), ('shashank', 2), ('learn', 3), ('python', 3), ('shashanl', 1), ('##', 1)])
+
+ing
+#counter method can be used to find out the no of repetitions of a word inside string 
+from collections import Counter
+s="1:one,2:two,3:three,1:one,4:four,"
+d=Counter(s)
+print(d)
+Counter({':': 5, ',': 5, 'o': 4, 'e': 4, '1': 2, 'n': 2, 't': 2, 'r': 2, '2': 1, 'w': 1, '3': 1, 'h': 1, '4': 1, 'f': 1, 'u': 1})
+
+from collections import defaultdict 
+user_movie_rating = defaultdict(lambda :defaultdict(int))
+user_movie_rating["Alice"]["LOR1"] =  4 
+user_movie_rating["Alice"]["LOR2"] =  5 
+user_movie_rating["Alice"]["LOR3"] =  3 
+user_movie_rating["Alice"]["SW1"]  =  5 
+user_movie_rating["Alice"]["SW2"]  =  3 
+print (user_movie_rating)
+​
+defaultdict(<function <lambda> at 0x000001FE284C0510>, {'Alice': defaultdict(<class 'int'>, {'LOR1': 4, 'LOR2': 5, 'LOR3': 3, 'SW1': 5, 'SW2': 3})})
+
+d={("one",1),("two",2),("three",3)}
+print(d)
+{('three', 3), ('two', 2), ('one', 1)}
+
+d={("one",1),("two",2),("three",3)}
+type(d)
+set
+
+t=(1,2,3,4,5,6,7,8,9)
+t[-4:-1]
+(1, 2, 3, 4, 5, 6, 7, 8)
+
+​
+t=(1,2,3,4,5,6,7,8,9)
+t[::-1]
+(9, 8, 7, 6, 5, 4, 3, 2, 1)
+
+l=[]
+l.append(1)
+l.append(2)
+l.append(3)
+print(l)
+l.pop()
+print(l)
+l=[]
+l.append(1)
+l.append(2)
+l.append(3)
+print(l)
+l.pop()
+print(l)
+[1, 2, 3]
+[1, 2]
+
+l=[]
+l.append(1)
+l.append(2)
+l.append(3)
+print(l)
+l.pop(0)
+l.pop(0)
+#l.pop(0)
+print(l)
+[1, 2, 3]
+[3]
+
+d={"first":1,"second":2,"third":3}
+d1={i:pow(j,3)for i,j in d.items()}
+print(d1)
+    
+d={"first":1,"second":2,"third":3}
+d1={i:pow(j,3)for i,j in d.items()}
+print(d1)
+    
+    
+{'first': 1, 'second': 8, 'third': 27}
+
+l=[(1,2),(3,4),(5,6)]
+for i in l:
+    print(i)
+(1, 2)
+(3, 4)
+(5, 6)
+
+h
+d={"first":1,"second":2,"third":3}
+for i in d.items():
+    print(i)
+  
+    
+('first', 1)
+('second', 2)
+('third', 3)
+
+d={"first":1,"second":2,"third":3}
+d1={i:pow(j,4) for i,j in d.items()}
+print(d1)
+    
+{'first': 1, 'second': 16, 'third': 81}
+
+setdefault
+s="""
+### !!! @@@ shashank learn python
+python learn shashank 
+learn python shashanl
+@@@ ##"""
+d={}
+for word in s.split():
+   d.setdefault(word,0)
+   d[word]+=1
+print(d)
+    
+{'###': 1, '!!!': 1, '@@@': 2, 'shashank': 2, 'learn': 3, 'python': 3, 'shashanl': 1, '##': 1}
+
+d={"hi":1,"hello":2,"third":3}
+d.setdefault("four",4)
+print(d)
+d.setdefault("four",5)
+print(d)
+{'hi': 1, 'hello': 2, 'third': 3, 'four': 4}
+{'hi': 1, 'hello': 2, 'third': 3, 'four': 4}
+
+and next methods
+#any object to become an iterable one should support both __iter__ and next methods
+class iteration_example():
+    def __init__(self,start,end):
+        self.current=start
+        self.finish=end
+        
+        
+    def __iter__(self):
+        return self
+    
+    def next(self):
+        if(self.current)<(self.finish):
+            self.current+=1
+            return self.current -1
+        else:
+            pass
+obj1=iteration_example(1,4)
+print(obj1.next())
+print(obj1.next())
+print(obj1.next())
+print(obj1.next())
+​
+        
+1
+2
+3
+None
